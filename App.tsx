@@ -1,9 +1,13 @@
-import React from 'react';
-import AppNavigation from './AppNavigation';
+import React from "react"
+import AppNavigation from "./AppNavigation"
+import { AuthProvider } from "./context/authContext"
 
 export default function App() {
   return (
-   <AppNavigation/>
-  );
+    <>
+      <AuthProvider>
+        <AppNavigation />
+      </AuthProvider>
+    </>
+  )
 }
-
