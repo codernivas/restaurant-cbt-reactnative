@@ -13,7 +13,7 @@ import CustomButton from "../../components/Button"
 import axios from "axios"
 import { loginApiPost } from "../../service/login"
 import { LoginPageApi } from "../../types"
-import { useAuth } from "../../context/authContext"
+import { useAuth } from "../../context/AuthContext"
 
 const LoginPage = ({ navigation }: any) => {
   React.useLayoutEffect(() => {
@@ -48,9 +48,9 @@ const LoginPage = ({ navigation }: any) => {
     try {
       const response = await loginApiPost(data)
       console.log("Login successful")
-      console.log(response)
-      setToken(response);
-      navigation.navigate('RewardTable');
+
+      setToken(response.token)
+      navigation.navigate("RewardTable")
     } catch (error) {
       console.error("Login failed", error)
       Alert.alert("Login Failed", "Invalid username or password")

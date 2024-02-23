@@ -4,8 +4,11 @@ import { StyleSheet, View, Text, Image } from "react-native"
 interface RewardCardProps {
   title: string
   onPress?: () => void
+  avaliable?:string
+  validText?:string
+
 }
-const RewardCard: React.FC<RewardCardProps> = ({ title, onPress }) => {
+const RewardCard: React.FC<RewardCardProps> = ({ title, onPress,avaliable ,validText}) => {
   return (
     <View style={styles.container}>
       <View style={styles.imgContainer}>
@@ -18,8 +21,8 @@ const RewardCard: React.FC<RewardCardProps> = ({ title, onPress }) => {
       <View style={styles.divider}></View>
       <View style={styles.pointContainer}>
         <Text style={styles.totalPoint}>{title}</Text>
-        <Text style={styles.points}>points</Text>
-        <Text style={styles.validate}>Valid until 01 March 2024</Text>
+        <Text style={styles.points}>Points {avaliable}</Text>
+        <Text style={styles.validate}>{validText}</Text>
       </View>
     </View>
   )
@@ -40,7 +43,8 @@ const styles = StyleSheet.create({
     height: 110,
     display: "flex",
     flexDirection: "row",
-    elevation:10
+    elevation:10,
+    zIndex:1
   },
   imgContainer: {
     width: 123,

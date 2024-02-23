@@ -2,20 +2,23 @@ import * as React from "react"
 import { StyleSheet, View, Text, Image } from "react-native"
 
 interface UserCardProps {
-  title: string
+  points: string
+  name: string
+  mobileno: string
   onPress?: () => void
+  validText:string
 }
-const UserCard: React.FC<UserCardProps> = ({ title, onPress }) => {
+const UserCard: React.FC<UserCardProps> = ({ points, onPress,name,mobileno,validText }) => {
   return (
     <View style={styles.container}>
       <View style={styles.imgContainer}>
-        <Text style={styles.name}>Ganesh</Text>
-        <Text style={styles.imgText}>9876543210</Text>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.imgText}>{mobileno}</Text>
       </View>
       <View style={styles.pointContainer}>
-        <Text style={styles.totalPoint}>{title}</Text>
+        <Text style={styles.totalPoint}>{points}</Text>
         <Text style={styles.points}>points</Text>
-        <Text style={styles.validate}>Valid until 01 March 2024</Text>
+        <Text style={styles.validate}>{validText}</Text>
       </View>
     </View>
   )
