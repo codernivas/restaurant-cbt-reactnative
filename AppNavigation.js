@@ -8,12 +8,13 @@ import CustomerHistory from "./pages/customerHistory"
 import ClaimReward from "./pages/claimReward"
 import AddReward from "./pages/addReward"
 import CustomerDetails from "./pages/customerDetails"
+import CalenderComp from "./pages/calender"
 const Stack = createStackNavigator()
 
 const AppNavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="LoginPage">
+      <Stack.Navigator initialRouteName="CalenderComp">
         <Stack.Screen name="LoginPage" component={LoginPage} />
         <Stack.Screen name="RewardTable" component={RewardTable} />
         <Stack.Screen name="NewCustomer" component={NewCustomer} />
@@ -21,6 +22,7 @@ const AppNavigation = () => {
         <Stack.Screen name="CustomerHistory" component={CustomerHistory} />
         <Stack.Screen name="ClaimReward" component={ClaimReward} />
         <Stack.Screen name="AddReward" component={AddReward} />
+        <Stack.Screen name="CalenderComp" component={CalenderComp} />
       </Stack.Navigator>
     </NavigationContainer>
   )
